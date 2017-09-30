@@ -12,7 +12,7 @@ namespace granny.classy
         public void GivenAValidPmsOverrun_WhenEnrich_ThenTheOverrunIsValid()
         {
             var mockRepository = Substitute.For<IRepository>();
-            mockRepository.GetMatchingOrderLineIds(123, 234).Returns(new [] {345});
+            mockRepository.GetMatchingOrderLineIds(123, 234).Returns(new[] { 345 });
             var overrunEnricher = new OverrunEnricher(mockRepository);
             var pmsOverrun = new PmsOverrun
             {
@@ -29,7 +29,7 @@ namespace granny.classy
         public void GivenAPmsOverrunWithMultipleMatchingOrderLineVersionIds_WhenEnrich_ThenTheOverrunIsFailedBecauseMultipleOrderLineVersions()
         {
             var mockRepository = Substitute.For<IRepository>();
-            mockRepository.GetMatchingOrderLineIds(123, 234).Returns(new []{345, 456});
+            mockRepository.GetMatchingOrderLineIds(123, 234).Returns(new[] { 345, 456 });
             var overrunEnricher = new OverrunEnricher(mockRepository);
             var pmsOverrun = new PmsOverrun
             {
